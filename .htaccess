@@ -1,0 +1,33 @@
+#AddDefaultCharset cp-1251
+#ErrorDocument 404 /
+
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} -s [OR]
+#RewriteCond %{REQUEST_FILENAME} -l [OR]
+#RewriteCond %{REQUEST_FILENAME} -d
+#RewriteRule ^.*$ - [L]
+#RewriteRule ^.*$ index.php [L]
+
+
+
+
+
+
+AddDefaultCharset utf-8
+
+RewriteEngine on
+RewriteBase /PHP/site/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php
+
+
+
+
+
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule .* index.php [L]
