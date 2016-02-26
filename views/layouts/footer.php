@@ -17,5 +17,18 @@
 <script src="/PHP/site/template/js/price-range.js"></script>
 <script src="/PHP/site/template/js/jquery.prettyPhoto.js"></script>
 <script src="/PHP/site/template/js/main.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $(".add-to-cart").click(function () {
+            var id = $(this).attr("data-id");
+            $.post("/php/site/cart/addAjax/"+id, {}, function (data) {
+                $("#cart-count").html("("+data+")");
+            });
+            return false;
+        });
+    });
+</script>
+
 </body>
 </html>
