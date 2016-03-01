@@ -32,8 +32,8 @@
                 <div class="col-sm-6">
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> +38 093 000 11 22</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> zinchenko.us@gmail.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> +38 063 628 39 67</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> darja-b@ukr.net</a></li>
                         </ul>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                                     <li><a href="/php/site/cart/">Корзина</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/php/site/blog/">Блог</a></li>
+                            <!-- <li><a href="/php/site/blog/">Блог</a></li> -->
                             <li><a href="/php/site/about/">О магазине</a></li>
                             <li><a href="/php/site/contacts/">Контакты</a></li>
                         </ul>

@@ -7,14 +7,17 @@ class SiteController
 {
     public function actionIndex()
     {
-        $categories = array();
+        // Список категорий для левого меню
         $categories = Category::getCategoriesList();
 
-        $latestProducts = array();
+        // Список последних товаров
         $latestProducts = Product::getLatestProducts();
 
-        require_once(ROOT . '/views/site/index.php');
+        //Список товаров для слайдера
+        $sliderProducts = Product::getRecommendedProducts();
 
+        // Подключаем вид
+        require_once(ROOT . '/views/site/index.php');
         return true;
     }
 
