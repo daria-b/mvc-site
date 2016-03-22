@@ -1,21 +1,26 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
 <section>
-    <div class="container">
-        <div class="row">
+    <div id="content">
+
 
             <br/>
 
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
-                    <li><a href="/php/site/admin">Админпанель</a></li>
-                    <li><a href="/php/site/admin/order">Управление категориями</a></li>
+                    <li><a href="/php/site/admin" class="text-cabinet">Админпанель</a></li>
+                    <li><a href="/php/site/admin/order" class="text-cabinet">Управление категориями</a></li>
                     <li class="active">Добавить категорию</li>
                 </ol>
             </div>
 
 
-            <h4>Добавить новую категорию</h4>
+        <div class="row">
+
+            <div class="col-sm-4 col-sm-offset-4 padding-right">
+
+
+            <center><h4>Добавить новую категорию</h4></center>
 
             <br/>
 
@@ -27,7 +32,7 @@
                 </ul>
             <?php endif; ?>
 
-            <div class="col-lg-4">
+
                 <div class="login-form">
                     <form action="#" method="post">
 
@@ -48,10 +53,11 @@
                         <input type="submit" name="submit" class="btn btn-default" value="Сохранить">
                     </form>
                 </div>
+
+
             </div>
-
-
         </div>
+
     </div>
 </section>
 

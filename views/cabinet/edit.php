@@ -1,7 +1,7 @@
 <?php include ROOT . '/views/layouts/header.php'; ?>
 
-    <section>
-        <div class="container">
+
+        <div id="content">
             <div class="row">
 
                 <div class="col-sm-4 col-sm-offset-4 padding-right">
@@ -17,25 +17,27 @@
                             </ul>
                         <?php endif; ?>
 
-                        <div class="signup-form"><!--sign up form-->
-                            <h2>Редактирование данных</h2>
+                        <div class="signup-form">
+                            <h2><center>Редактирование данных</center></h2>
                             <form action="#" method="post">
-                                <p>Имя:</p>
+                                <p>Изменить имя</p>
                                 <input type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/>
 
-                                <p>Пароль:</p>
+                                <p>Изменить пароль</p>
                                 <input type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/>
                                 <br/>
                                 <input type="submit" name="submit" class="btn btn-default" value="Сохранить" />
                             </form>
-                        </div><!--/sign up form-->
+                        </div>
 
                     <?php endif; ?>
                     <br/>
                     <br/>
                 </div>
             </div>
+
         </div>
-    </section>
+
+
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>

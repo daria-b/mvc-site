@@ -4,6 +4,9 @@ class CabinetController
 {
     public function actionIndex()
     {
+
+        $categories = Category::getCategoriesList();
+
         // Получаем идентификатор пользователя из сессии
         $userId = User::checkLogged();
 
@@ -17,6 +20,8 @@ class CabinetController
 
     public function actionEdit()
     {
+        $categories = Category::getCategoriesList();
+
         // Получаем идентификатор пользователя из сессии
         $userId = User::checkLogged();
 

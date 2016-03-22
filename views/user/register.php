@@ -1,39 +1,48 @@
 <?php include ROOT . '/views/layouts/header.php'; ?>
 
+<div id="content">
+
     <section>
-        <div class="container">
-            <div class="row">
 
-                <div class="col-sm-4 col-sm-offset-4 padding-right">
+        <div class="row">
 
-                    <?php if ($result): ?>
-                        <p>Вы зарегистрированы!</p>
-                    <?php else: ?>
+            <div class="col-sm-4 col-sm-offset-4 padding-right">
+
+                <?php if ($result): ?>
+                    <p>Вы зарегистрированы!</p>
+                <?php else: ?>
                     <?php if (isset($errors) && is_array($errors)): ?>
                         <ul>
                             <?php foreach ($errors as $error): ?>
                                 <li> - <?php echo $error; ?></li>
                             <?php endforeach; ?>
                         </ul>
-                    <?php endif; ?>
+                <?php endif; ?>
 
-                        <div class="signup-form"><!--sign up form-->
-                            <h2>Регистрация на сайте</h2>
-                            <form action="#" method="post">
-                                <input type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>" />
-                                <input type="email" name="email" placeholder="E-mail" value="<?php echo $email; ?>" />
-                                <input type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>" />
-                                <input type="submit" name="submit" class="btn btn-default" value="Регистрация" />
-                            </form>
-                        </div><!--/sign up form-->
-
-                        <?php endif; ?>
-
+                <div class="signup-form"><!--sign up form-->
+                    <h2><center>Регистрация на сайте</center></h2>
                     <br/>
-                    <br/>
-                </div>
+                    <form action="#" method="post">
+                        <p>Имя</p>
+                        <input type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/>
+                        <p>E-mail</p>
+                        <input type="email" name="email" placeholder="E-mail" value="<?php echo $email; ?>"/>
+                        <p>Пароль</p>
+                        <input type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/>
+                        <br/>
+                        <input type="submit" name="submit" class="btn btn-default" value="Регистрация" />
+                    </form>
+                </div><!--/sign up form-->
+
+                <?php endif; ?>
+
+                <br/>
+                <br/>
             </div>
         </div>
+
     </section>
+
+</div>
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>

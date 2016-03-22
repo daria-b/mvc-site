@@ -1,112 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+
 <head>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/PHP/site/template/css/rozetka-styles.css">
+    <link rel="stylesheet" href="/PHP/site/template/css/style.css">
+    <link rel="stylesheet" href="/PHP/site/template/css/style-new.css">
+
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Главная</title>
-    <link href="/PHP/site/template/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/PHP/site/template/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/PHP/site/template/css/prettyPhoto.css" rel="stylesheet" type="text/css">
-    <link href="/PHP/site/template/css/price-range.css" rel="stylesheet" type="text/css">
-    <link href="/PHP/site/template/css/animate.css" rel="stylesheet" type="text/css">
-    <link href="/PHP/site/template/css/main.css" rel="stylesheet" type="text/css">
-    <link href="/PHP/site/template/css/responsive.css" rel="stylesheet" type="text/css">
-    <!--[if lt IE 9]>
-    <script src="/PHP/site/template/js/html5shiv.js"></script>
-    <script src="/PHP/site/template/js/respond.min.js"></script>
-    <![endif]-->
-    <link rel="shortcut icon" href="/PHP/site/template/images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/PHP/site/template/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/PHP/site/template/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/PHP/site/template/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/PHP/site/template/images/ico/apple-touch-icon-57-precomposed.png">
-</head><!--/head-->
+    <title>TechnoShop</title>
+
+</head>
 
 <body>
-<header id="header"><!--header-->
-    <div class="header_top"><!--header_top-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="contactinfo">
-                        <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> +38 063 628 39 67</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> darja-b@ukr.net</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="social-icons pull-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header_top-->
 
-    <div class="header-middle"><!--header-middle-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="logo pull-left">
-                        <a href="index.php"><img src="/PHP/site/template/images/home/logo.png" alt="" /></a>
-                    </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="shop-menu pull-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href="/php/site/cart/">
-                                    <i class="fa fa-shopping-cart"></i> Корзина
-                                    <span id="cart-count">(<?php echo Cart::countItems(); ?>)</span>
-                                </a>
-                            </li>
-                            <?php if (User::isGuest()): ?>
-                                <li><a href="/php/site/user/login/"><i class="fa fa-lock"></i> Вход</a></li>
-                            <?php else: ?>
-                                <li><a href="/php/site/cabinet/"><i class="fa fa-user"></i> Аккаунт</a></li>
-                                <li><a href="/php/site/user/logout/"><i class="fa fa-unlock"></i> Выход</a></li>
-                            <?php endif; ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header-middle-->
+<div id="top-line"></div>
 
-    <div class="header-bottom"><!--header-bottom-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="mainmenu pull-left">
-                        <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="/php/site/index/">Главная</a></li>
-                            <li class="dropdown"><a href="#">Магазин<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="/php/site/catalog/">Каталог товаров</a></li>
-                                    <li><a href="/php/site/cart/">Корзина</a></li>
-                                </ul>
-                            </li>
-                            <!-- <li><a href="/php/site/blog/">Блог</a></li> -->
-                            <li><a href="/php/site/about/">О магазине</a></li>
-                            <li><a href="/php/site/contacts/">Контакты</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header-bottom-->
+<div id="header">
 
-</header><!--/header-->
+    <a href="/php/site/index/" id="logo"></a>
+
+    <div id="top-menu">
+
+        <ul class="nav navbar-nav collapse navbar-collapse">
+            <li><a href="/php/site/index/">Главная</a></li>
+            <li class="dropdown"><a href="/php/site/catalog/">Товары<i class="fa fa-angle-down"></i></a>
+                <ul class="sub-menu">
+
+                    <?php foreach($categories as $categoryItem): ?>
+                    <li><a href="/php/site/category/<?php echo $categoryItem['id']; ?>">
+                            <?php echo $categoryItem['name']; ?>
+                        </a>
+                    </li>
+                    <?php endforeach; ?>
+
+                </ul>
+            </li>
+            <li><a href="/php/site/about/">О магазине</a></li>
+            <li><a href="/php/site/contacts/">Контакты</a></li>
+
+            <?php if (User::isGuest()): ?>
+            <li class="dropdown"><a href="/php/site/user/login/">
+                    Учетная запись<i class="fa fa-angle-down"></i></a>
+            <?php else: ?>
+            <li class="dropdown"><a href="/php/site/cabinet/">
+                    Учетная запись<i class="fa fa-angle-down"></i></a>
+            <?php endif; ?>
+
+                <ul class="sub-menu">
+                    <?php if (User::isGuest()): ?>
+                        <li><a href="/php/site/user/login/">Вход</a></li>
+                        <li><a href="/php/site/user/register/">Регистрация</a></li>
+                    <?php else: ?>
+                        <li><a href="/php/site/cabinet/">Профиль</a></li>
+                        <li><a href="/php/site/user/logout/">Выход</a></li>
+                    <?php endif; ?>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <div id="search">
+        <form method="" action="" id="search-form">
+            <input type="text" name="" value="Поиск по товарам">
+            <input type="submit" name="" value=" ">
+        </form>
+    </div>
+
+    <a href="/php/site/cart/" id="cart-btn">Корзина
+        <span id="cart-count">(<?php echo Cart::countItems(); ?>)</span>
+    </a>
+
+</div>

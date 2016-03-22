@@ -1,17 +1,17 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
 <section>
-    <div class="container">
-        <div class="row">
+    <div id="content">
+        <div class="content-admin">
 
             <br/>
 
-            <div class="breadcrumbs">
+
                 <ol class="breadcrumb">
-                    <li><a href="/php/site/admin">Админпанель</a></li>
+                    <li><a href="/php/site/admin" class="text-cabinet">Админпанель</a></li>
                     <li class="active">Управление товарами</li>
                 </ol>
-            </div>
+
 
             <a href="/php/site/admin/product/create" class="btn btn-default back"><i class="fa fa-plus"></i> Добавить товар</a>
 

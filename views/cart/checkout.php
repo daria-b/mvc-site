@@ -1,79 +1,64 @@
 <?php include ROOT . '/views/layouts/header.php'; ?>
 
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="left-sidebar">
-                        <h2>Каталог</h2>
-                        <div class="panel-group category-products">
-                            <?php foreach ($categories as $categoryItem): ?>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a href="/php/site/category/<?php echo $categoryItem['id']; ?>">
-                                                <?php echo $categoryItem['name']; ?>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-9 padding-right">
-                    <div class="features_items">
-                        <h2 class="title text-center">Корзина</h2>
+    <div id="content">
 
 
-                        <?php if ($result): ?>
-                            <p>Заказ оформлен. Мы Вам перезвоним.</p>
-                        <?php else: ?>
 
-                            <p>Выбрано товаров: <?php echo $totalQuantity; ?>, на сумму: <?php echo $totalPrice; ?>, $</p><br/>
 
-                            <?php if (!$result): ?>
 
-                                <div class="col-sm-4">
-                                    <?php if (isset($errors) && is_array($errors)): ?>
-                                        <ul>
-                                            <?php foreach ($errors as $error): ?>
-                                                <li> - <?php echo $error; ?></li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    <?php endif; ?>
+    <div class="row">
 
-                                    <p>Для оформления заказа заполните форму. Наш менеджер свяжется с Вами.</p>
+    <div class="col-sm-4 col-sm-offset-4 padding-right">
 
-                                    <div class="login-form">
-                                        <form action="#" method="post">
+                    <h2 class="title text-center">Корзина</h2>
+                    </br>
 
-                                            <p>Ваша имя</p>
-                                            <input type="text" name="userName" placeholder="" value="<?php echo $userName; ?>"/>
 
-                                            <p>Номер телефона</p>
-                                            <input type="text" name="userPhone" placeholder="" value="<?php echo $userPhone; ?>"/>
+                    <?php if ($result): ?>
+                        <p><center>Заказ оформлен! Наш менеджер Вам перезвонит.</center></p>
+                    <?php else: ?>
 
-                                            <p>Комментарий к заказу</p>
-                                            <input type="text" name="userComment" placeholder="Сообщение" value="<?php echo $userComment; ?>"/>
+                    <p>Выбрано товаров: <?php echo $totalQuantity; ?>, на сумму: <?php echo $totalPrice; ?>, $</p><br/>
 
-                                            <br/>
-                                            <br/>
-                                            <input type="submit" name="submit" class="btn btn-default" value="Оформить" />
-                                        </form>
-                                    </div>
+                    <?php if (!$result): ?>
+
+
+                                <?php if (isset($errors) && is_array($errors)): ?>
+                                    <ul>
+                                        <?php foreach ($errors as $error): ?>
+                                            <li> - <?php echo $error; ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+
+                                <p>Для оформления заказа заполните форму. Наш менеджер свяжется с Вами.</p>
+
+
+                                <div class="login-form">
+                                    <br/>
+                                    <form action="#" method="post">
+                                        <p>Ваше имя</p>
+                                        <input type="text" name="userName" placeholder="Имя" value="<?php echo $userName; ?>"/>
+                                        <p>Номер телефона</p>
+                                        <input type="text" name="userPhone" placeholder="Телефон" value="<?php echo $userPhone; ?>"/>
+                                        <p>Комментарий к заказу</p>
+                                        <input type="text" name="userComment" placeholder="Сообщение" value="<?php echo $userComment; ?>"/>
+                                        <br/>
+                                        <br/>
+                                        <input type="submit" name="submit" class="btn btn-default" value="Оформить" />
+                                    </form>
                                 </div>
 
-                            <?php endif; ?>
+                                <br/>
+                                <br/>
+
 
                         <?php endif; ?>
 
-                    </div>
+                    <?php endif; ?>
+</div> </div>
 
-                </div>
-            </div>
-        </div>
-    </section>
+
+    </div>
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>

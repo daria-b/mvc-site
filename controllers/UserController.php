@@ -4,6 +4,9 @@ class UserController
 {
     public function actionRegister()
     {
+
+        $categories = Category::getCategoriesList();
+
         $name = '';
         $email = '';
         $password = '';
@@ -46,6 +49,9 @@ class UserController
 
     public function actionLogin()
     {
+
+        $categories = Category::getCategoriesList();
+
         $email = '';
         $password = '';
 

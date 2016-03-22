@@ -1,32 +1,34 @@
-<footer id="footer"><!--Footer-->
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <p class="pull-left">Copyright © 2016</p>
-                <p class="pull-right">Project MVC</p>
-            </div>
-        </div>
+<div id="footer">
+
+    <div id="footer-menu">
+        <a href="#">Оставить отзыв</a>
+        <div class="top-menu-line"></div>
+        <a href="/php/site/shares/">Акции</a>
+        <div class="top-menu-line"></div>
+        <a href="#">Доставка</a>
     </div>
-</footer><!--/Footer-->
+
+    <div id="copyright">
+        &copy; <a href="#">www.technoshop.ua</a>
+    </div>
+
+</div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+    $('.carousel').carousel({
+        interval: 5000
+    });
+</script>
+
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-<!-- slider -->
-<script src="/PHP/site/template/js/jquery.cycle2.min.js"></script>
-<script src="/PHP/site/template/js/jquery.cycle2.carousel.min.js"></script>
-<!-- slider -->
-
-
-<script src="/PHP/site/template/js/jquery.js"></script>
-<script src="/PHP/site/template/js/bootstrap.min.js"></script>
-<script src="/PHP/site/template/js/jquery.scrollUp.min.js"></script>
-<script src="/PHP/site/template/js/price-range.js"></script>
-<script src="/PHP/site/template/js/jquery.prettyPhoto.js"></script>
-<script src="/PHP/site/template/js/main.js"></script>
-
 <script>
     $(document).ready(function(){
-        $(".add-to-cart").click(function () {
+        $(".to-cart").click(function () {
             var id = $(this).attr("data-id");
             $.post("/php/site/cart/addAjax/"+id, {}, function (data) {
                 $("#cart-count").html("("+data+")");
@@ -36,5 +38,4 @@
     });
 </script>
 
-</body>
 </html>

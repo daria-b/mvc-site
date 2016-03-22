@@ -41,6 +41,8 @@ return array(
 
     // О магазине
     'contacts' => 'site/contact',
+    'about' => 'site/about',
+    'shares' => 'site/shares',
     // Главная страница
     'index' => 'site/index', //actionIndex in SiteController
 

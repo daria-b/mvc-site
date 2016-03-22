@@ -1,21 +1,25 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
 <section>
-    <div class="container">
-        <div class="row">
+    <div id="content">
+
+
 
             <br/>
 
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
-                    <li><a href="/php/site/admin">Админпанель</a></li>
-                    <li><a href="/php/site/admin/product">Управление товарами</a></li>
+                    <li><a href="/php/site/admin" class="text-cabinet">Админпанель</a></li>
+                    <li><a href="/php/site/admin/product" class="text-cabinet">Управление товарами</a></li>
                     <li class="active">Редактировать товар</li>
                 </ol>
             </div>
 
+        <div class="row">
 
-            <h4>Добавить новый товар</h4>
+            <div class="col-sm-4 col-sm-offset-4 padding-right">
+
+            <center><h4>Добавить новый товар</h4></center>
 
             <br/>
 
@@ -27,7 +31,7 @@
                 </ul>
             <?php endif; ?>
 
-            <div class="col-lg-4">
+
                 <div class="login-form">
                     <form action="#" method="post" enctype="multipart/form-data">
 
@@ -102,9 +106,16 @@
 
                     </form>
                 </div>
-            </div>
+
+
+
+
+         </div>
 
         </div>
+
+
+
     </div>
 </section>
 

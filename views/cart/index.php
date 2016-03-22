@@ -1,29 +1,13 @@
 <?php include ROOT . '/views/layouts/header.php'; ?>
 
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="left-sidebar">
-                        <h2>Каталог</h2>
-                        <div class="panel-group category-products">
-                            <?php foreach ($categories as $categoryItem): ?>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a href="/php/site/category/<?php echo $categoryItem['id'];?>">
-                                                <?php echo $categoryItem['name'];?>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                </div>
+<div id="content-cart">
+
+
+
+
 
                 <div class="col-sm-9 padding-right">
-                    <div class="features_items">
+
                         <h2 class="title text-center">Корзина</h2>
 
                         <?php if ($productsInCart): ?>
@@ -67,13 +51,11 @@
                             <a class="btn btn-default checkout" href="/php/site/index/"><i class="fa fa-shopping-cart"></i> Вернуться к покупкам</a>
                         <?php endif; ?>
 
-                    </div>
-
-
 
                 </div>
-            </div>
-        </div>
-    </section>
+
+
+
+</div>
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>

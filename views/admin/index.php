@@ -1,12 +1,12 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
 <section>
-    <div class="container">
-        <div class="row">
+    <div id="content">
+        <div id="cabinet">
 
             <br/>
 
-            <h4>Добрый день, администратор!</h4>
+            <h3>Добрый день, администратор!</h3>
 
             <br/>
 
@@ -15,12 +15,12 @@
             <br/>
 
             <ul>
-                <li><a href="/php/site/admin/product">Управление товарами</a></li>
-                <li><a href="/php/site/admin/category">Управление категориями</a></li>
-                <li><a href="/php/site/admin/order">Управление заказами</a></li>
+                <li><a href="/php/site/admin/product" class="text-cabinet">Управление товарами</a></li>
+                <li><a href="/php/site/admin/category" class="text-cabinet">Управление категориями</a></li>
+                <li><a href="/php/site/admin/order" class="text-cabinet">Управление заказами</a></li>
             </ul>
-
         </div>
+
     </div>
 </section>
 

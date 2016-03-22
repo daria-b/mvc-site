@@ -23,6 +23,9 @@ class SiteController
 
     public function actionContact()
     {
+
+        $categories = Category::getCategoriesList();
+
         $userEmail = '';
         $userText = '';
         $result = false;
@@ -50,6 +53,22 @@ class SiteController
 
         require_once(ROOT . '/views/site/contact.php');
 
+        return true;
+    }
+
+    public function actionAbout()
+    {
+        $categories = Category::getCategoriesList();
+
+        require_once(ROOT . '/views/site/about.php');
+        return true;
+    }
+
+    public function actionShares()
+    {
+        $categories = Category::getCategoriesList();
+
+        require_once(ROOT . '/views/site/shares.php');
         return true;
     }
 }

@@ -8,11 +8,10 @@ class CatalogController
 {
     public function actionIndex()
     {
-        $categories = array();
         $categories = Category::getCategoriesList();
 
         $latestProducts = array();
-        $latestProducts = Product::getLatestProducts(3);
+        $latestProducts = Product::getLatestProducts(6);
 
         require_once(ROOT . '/views/catalog/index.php');
 

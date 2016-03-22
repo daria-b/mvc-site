@@ -30,7 +30,6 @@ class CartController
 
     public function actionIndex()
     {
-        $categories = array();
         $categories = Category::getCategoriesList();
 
         $productsInCart = false;
@@ -55,7 +54,6 @@ class CartController
     public function actionCheckout()
     {
         // Список категорий для левого меню
-        $categories = array();
         $categories = Category::getCategoriesList();
 
         // Статус успешного оформления заказа

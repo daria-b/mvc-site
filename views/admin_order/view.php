@@ -1,15 +1,15 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
 <section>
-    <div class="container">
-        <div class="row">
+    <div id="content">
+        <div class="content-admin">
 
             <br/>
 
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
-                    <li><a href="/php/site/admin">Админпанель</a></li>
-                    <li><a href="/php/site/admin/order">Управление заказами</a></li>
+                    <li><a href="/php/site/admin" class="text-cabinet">Админпанель</a></li>
+                    <li><a href="/php/site/admin/order" class="text-cabinet">Управление заказами</a></li>
                     <li class="active">Просмотр заказа</li>
                 </ol>
             </div>
@@ -78,6 +78,7 @@
 
             <a href="/php/site/admin/order/" class="btn btn-default back"><i class="fa fa-arrow-left"></i> Назад</a>
         </div>
+    </div>
 
 
 </section>
