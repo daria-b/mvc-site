@@ -1,6 +1,5 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
-<section>
     <div id="content">
         <div class="content-admin">
 
@@ -8,8 +7,8 @@
 
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
-                    <li><a href="/php/site/admin" class="text-cabinet">Админпанель</a></li>
-                    <li><a href="/php/site/admin/order" class="text-cabinet">Управление заказами</a></li>
+                    <li><a href="/admin" class="text-cabinet">Админпанель</a></li>
+                    <li><a href="/admin/order" class="text-cabinet">Управление заказами</a></li>
                     <li class="active">Просмотр заказа</li>
                 </ol>
             </div>
@@ -17,8 +16,6 @@
 
             <h4>Просмотр заказа #<?php echo $order['id']; ?></h4>
             <br/>
-
-
 
 
             <h5>Информация о заказе</h5>
@@ -76,12 +73,9 @@
                 <?php endforeach; ?>
             </table>
 
-            <a href="/php/site/admin/order/" class="btn btn-default back"><i class="fa fa-arrow-left"></i> Назад</a>
+            <a href="/admin/order/" class="btn btn-default back"><i class="fa fa-arrow-left"></i> Назад</a>
         </div>
     </div>
-
-
-</section>
 
 <?php include ROOT . '/views/layouts/footer_admin.php'; ?>
 

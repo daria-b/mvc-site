@@ -1,8 +1,8 @@
 <?php
 
 return array(
-    'host' => 'localhost',
-    'dbname' => 'phpshop',
-    'user' => 'root',
-    'password' => ''
+    'host' => 'db2.ho.ua',
+    'dbname' => 'technoshop',
+    'user' => 'technoshop',
+    'password' => 'GazTkqdN6v'
 );

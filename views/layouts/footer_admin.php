@@ -1,7 +1,7 @@
 <div id="footer">
 
     <div id="copyright">
-        &copy; <a href="#">www.technoshop.ua</a>
+        &copy; <a href="/">www.technoshop.ua</a>
     </div>
 
 </div>
@@ -16,13 +16,12 @@
     });
 </script>
 
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
         $(".to-cart").click(function () {
             var id = $(this).attr("data-id");
-            $.post("/php/site/cart/addAjax/"+id, {}, function (data) {
+            $.post("/cart/addAjax/"+id, {}, function (data) {
                 $("#cart-count").html("("+data+")");
             });
             return false;

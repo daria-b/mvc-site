@@ -1,24 +1,21 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
-<section>
     <div id="content">
-
+        <div class="content-admin">
 
             <br/>
 
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
-                    <li><a href="/php/site/admin" class="text-cabinet">Админпанель</a></li>
-                    <li><a href="/php/site/admin/order" class="text-cabinet">Управление категориями</a></li>
+                    <li><a href="/admin" class="text-cabinet">Админпанель</a></li>
+                    <li><a href="/admin/order" class="text-cabinet">Управление категориями</a></li>
                     <li class="active">Добавить категорию</li>
                 </ol>
             </div>
 
-
         <div class="row">
 
             <div class="col-sm-4 col-sm-offset-4 padding-right">
-
 
             <center><h4>Добавить новую категорию</h4></center>
 
@@ -54,12 +51,10 @@
                     </form>
                 </div>
 
-
             </div>
         </div>
-
+        </div>
     </div>
-</section>
 
 <?php include ROOT . '/views/layouts/footer_admin.php'; ?>
 

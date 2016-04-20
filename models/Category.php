@@ -2,13 +2,12 @@
 
 class Category
 {
-    //Returns an array of categories
+
     public static function getCategoriesList()
     {
         $db = Db::getConnection();
 
         $categoryList = array();
-
         $result = $db->query('SELECT id, name FROM category WHERE status = "1" ORDER BY sort_order ASC');
 
         $i = 0;
@@ -22,17 +21,12 @@ class Category
     }
 
 
-    /* Возращает массив категорий для списка в админпанели
-    (при этом в результат попадают и вкдюченные и выключенные категории)*/
     public static function getCategoriesListAdmin()
     {
-        // Соединение с БД
         $db = Db::getConnection();
 
-        // Запрос к БД
         $result = $db->query('SELECT id, name, sort_order, status FROM category ORDER BY sort_order ASC');
 
-        // Получение и возврат результатов
         $categoryList = array();
         $i = 0;
         while ($row = $result->fetch()) {
@@ -45,26 +39,23 @@ class Category
         return $categoryList;
     }
 
+
     public static function deleteCategoryById($id)
     {
-        // Соединение с БД
         $db = Db::getConnection();
 
-        // Текст запроса к БД
         $sql = 'DELETE FROM category WHERE id = :id';
 
-        // Получение и возврат результатов. Используется подготовленный запрос
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
         return $result->execute();
     }
 
+
     public static function updateCategoryById($id, $name, $sortOrder, $status)
     {
-        // Соединение с БД
         $db = Db::getConnection();
 
-        // Текст запроса к БД
         $sql = "UPDATE category
             SET
                 name = :name,
@@ -72,7 +63,6 @@ class Category
                 status = :status
             WHERE id = :id";
 
-        // Получение и возврат результатов. Используется подготовленный запрос
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
         $result->bindParam(':name', $name, PDO::PARAM_STR);
@@ -81,34 +71,24 @@ class Category
         return $result->execute();
     }
 
+
     public static function getCategoryById($id)
     {
-        // Соединение с БД
         $db = Db::getConnection();
 
-        // Текст запроса к БД
         $sql = 'SELECT * FROM category WHERE id = :id';
 
-        // Используется подготовленный запрос
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
 
-        // Указываем, что хотим получить данные в виде массива
         $result->setFetchMode(PDO::FETCH_ASSOC);
 
-        // Выполняем запрос
         $result->execute();
 
-        // Возвращаем данные
         return $result->fetch();
     }
 
-    /**
-     * Возвращает текстое пояснение статуса для категории :<br/>
-     * <i>0 - Скрыта, 1 - Отображается</i>
-     * @param integer $status <p>Статус</p>
-     * @return string <p>Текстовое пояснение</p>
-     */
+
     public static function getStatusText($status)
     {
         switch ($status) {
@@ -121,20 +101,19 @@ class Category
         }
     }
 
+
     public static function createCategory($name, $sortOrder, $status)
     {
-        // Соединение с БД
         $db = Db::getConnection();
 
-        // Текст запроса к БД
         $sql = 'INSERT INTO category (name, sort_order, status) '
             . 'VALUES (:name, :sort_order, :status)';
 
-        // Получение и возврат результатов. Используется подготовленный запрос
         $result = $db->prepare($sql);
         $result->bindParam(':name', $name, PDO::PARAM_STR);
         $result->bindParam(':sort_order', $sortOrder, PDO::PARAM_INT);
         $result->bindParam(':status', $status, PDO::PARAM_INT);
         return $result->execute();
     }
+
 }

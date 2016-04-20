@@ -2,26 +2,20 @@
 
     <div id="content">
 
+        <div class="row">
 
-
-
-
-    <div class="row">
-
-    <div class="col-sm-4 col-sm-offset-4 padding-right">
+            <div class="col-sm-4 col-sm-offset-4 padding-right">
 
                     <h2 class="title text-center">Корзина</h2>
                     </br>
-
 
                     <?php if ($result): ?>
                         <p><center>Заказ оформлен! Наш менеджер Вам перезвонит.</center></p>
                     <?php else: ?>
 
-                    <p>Выбрано товаров: <?php echo $totalQuantity; ?>, на сумму: <?php echo $totalPrice; ?>, $</p><br/>
+                    <p>Выбрано товаров: <?php echo $totalQuantity; ?>, на сумму: <?php echo $totalPrice; ?> грн</p><br/>
 
                     <?php if (!$result): ?>
-
 
                                 <?php if (isset($errors) && is_array($errors)): ?>
                                     <ul>
@@ -49,16 +43,12 @@
                                     </form>
                                 </div>
 
-                                <br/>
-                                <br/>
-
+                                <br/><br/>
 
                         <?php endif; ?>
-
                     <?php endif; ?>
-</div> </div>
-
-
+            </div>
+        </div>
     </div>
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>

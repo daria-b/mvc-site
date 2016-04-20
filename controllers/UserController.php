@@ -4,23 +4,36 @@ class UserController
 {
     public function actionRegister()
     {
-
         $categories = Category::getCategoriesList();
 
         $name = '';
         $email = '';
         $password = '';
+        $address = '';
+        $phone = '';
         $result = false;
 
         if (isset($_POST['submit'])){
             $name = $_POST['name'];
             $email = $_POST['email'];
             $password = $_POST['password'];
+            $address = $_POST['address'];
+            $phone = $_POST['phone'];
 
             $errors = false;
 
             if (!User::checkName($name)){
                 $errors[] = 'Имя не должно быть короче 2-х символов';
+
+            }
+
+            if (!User::checkPhone($phone)){
+                $errors[] = 'Номер телефона должен состоять из 11 цифр';
+
+            }
+
+            if (!User::checkAddress($address)){
+                $errors[] = 'Адрес не должен быть короче 4-х символов';
 
             }
 
@@ -37,7 +50,7 @@ class UserController
             }
 
             if ($errors == false){
-                $result = User::register($name, $email, $password);
+                $result = User::register($name, $email, $password, $address, $phone);
             }
 
         }
@@ -47,9 +60,9 @@ class UserController
         return true;
     }
 
+
     public function actionLogin()
     {
-
         $categories = Category::getCategoriesList();
 
         $email = '';
@@ -61,7 +74,6 @@ class UserController
 
             $errors = false;
 
-            // Валидация полей
             if (!User::checkEmail($email)) {
                 $errors[] = 'Неправильный email';
             }
@@ -69,17 +81,13 @@ class UserController
                 $errors[] = 'Пароль не должен быть короче 6-ти символов';
             }
 
-            // Проверяем, существует ли пользователь
             $userId = User::checkUserData($email, $password);
 
             if ($userId == false) {
-                // Если данные неправильные - показываем ошибку
                 $errors[] = "Неправильные данные для входа на сайт";
             } else {
-                // Если данные правильные - записываем пользователя (сессия)
                 User::auth($userId);
-                // Перенаправляем пользователя в закрытую часть - кабинет
-                header("Location: /php/site/cabinet/");
+                header("Location: /cabinet/");
             }
 
         }
@@ -89,12 +97,12 @@ class UserController
         return true;
     }
 
-    // Удаляем данные о пользователе из сессии
+
     public function actionLogout()
     {
         session_start();
         unset($_SESSION["user"]);
-        header("Location: /php/site/index/");
+        header("Location: /");
     }
 
 }

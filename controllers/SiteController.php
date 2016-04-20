@@ -5,25 +5,22 @@ include_once ROOT . '/models/Product.php';
 
 class SiteController
 {
-    public function actionIndex()
+    public function actionIndex($page = 1)
     {
-        // Список категорий для левого меню
         $categories = Category::getCategoriesList();
 
-        // Список последних товаров
-        $latestProducts = Product::getLatestProducts();
+        $latestProducts = array();
+        $latestProducts = Product::getNewProducts(6, $page);
+        $total = Product::getNewTotalProducts();
+        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
 
-        //Список товаров для слайдера
-        $sliderProducts = Product::getRecommendedProducts();
-
-        // Подключаем вид
         require_once(ROOT . '/views/site/index.php');
         return true;
     }
 
+
     public function actionContact()
     {
-
         $categories = Category::getCategoriesList();
 
         $userEmail = '';
@@ -37,7 +34,6 @@ class SiteController
 
             $errors = false;
 
-            //Валидация полей
             if (!User::checkEmail($userEmail)){
                 $errors[] = 'Неправильный Email';
             }
@@ -64,11 +60,43 @@ class SiteController
         return true;
     }
 
-    public function actionShares()
+
+    public function actionDelivery()
     {
         $categories = Category::getCategoriesList();
 
-        require_once(ROOT . '/views/site/shares.php');
+        require_once(ROOT . '/views/site/delivery.php');
         return true;
     }
+
+
+    public function actionSearch(){
+
+        $categories = Category::getCategoriesList();
+
+        if (!empty($_GET['query'])) {
+
+            $x = $_GET['query'];
+            $search_result = array();
+            $search_result = Product::searchProduct($x);
+        }
+
+        require_once(ROOT . '/views/site/search.php');
+        return true;
+    }
+
+
+    public function actionMessage($page = 1){
+
+        $categories = Category::getCategoriesList();
+
+        $comments = Comment::getMessages($page);
+
+        $total = Comment::getAllTotalMessages();
+        $pagination = new Pagination($total, $page, User::SHOW_BY_DEFAULT, 'page-');
+
+        require_once(ROOT . '/views/site/message.php');
+        return true;
+    }
+
 }

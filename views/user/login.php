@@ -2,8 +2,6 @@
 
 <div id="content">
 
-
-
         <div class="row">
 
             <div class="col-sm-4 col-sm-offset-4 padding-right">
@@ -16,7 +14,7 @@
                     </ul>
                 <?php endif; ?>
 
-                <div class="signup-form"><!--sign up form-->
+                <div class="signup-form">
                     <h2><center>Вход на сайт</center></h2>
                     <br/>
                     <form action="#" method="post">
@@ -27,14 +25,14 @@
                         <br/>
                         <input type="submit" name="submit" class="btn btn-default" value="Вход" />
                     </form>
-                </div><!--/sign up form-->
+                </div>
 
                 <br/>
                 <br/>
             </div>
         </div>
 
-
+    <br><br><br><br>
 
 </div>
 

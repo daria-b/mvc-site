@@ -1,16 +1,14 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
-<section>
     <div id="content">
-
-
+        <div class="content-admin">
 
             <br/>
 
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
-                    <li><a href="/php/site/admin" class="text-cabinet">Админпанель</a></li>
-                    <li><a href="/php/site/admin/product" class="text-cabinet">Управление товарами</a></li>
+                    <li><a href="/admin" class="text-cabinet">Админпанель</a></li>
+                    <li><a href="/admin/product" class="text-cabinet">Управление товарами</a></li>
                     <li class="active">Редактировать товар</li>
                 </ol>
             </div>
@@ -38,10 +36,10 @@
                         <p>Название товара</p>
                         <input type="text" name="name" placeholder="" value="">
 
-                        <p>Артикул</p>
+                        <p>Код товара</p>
                         <input type="text" name="code" placeholder="" value="">
 
-                        <p>Стоимость, $</p>
+                        <p>Стоимость, грн</p>
                         <input type="text" name="price" placeholder="" value="">
 
                         <p>Категория</p>
@@ -64,7 +62,7 @@
                         <input type="file" name="image" placeholder="" value="">
 
                         <p>Детальное описание</p>
-                        <textarea name="description"></textarea>
+                        <textarea name="description" rows="7" cols="32"></textarea>
 
                         <br/><br/>
 
@@ -84,14 +82,6 @@
 
                         <br/><br/>
 
-                        <p>Рекомендуемые</p>
-                        <select name="is_recommended">
-                            <option value="1" selected="selected">Да</option>
-                            <option value="0">Нет</option>
-                        </select>
-
-                        <br/><br/>
-
                         <p>Статус</p>
                         <select name="status">
                             <option value="1" selected="selected">Отображается</option>
@@ -105,19 +95,12 @@
                         <br/><br/>
 
                     </form>
+
                 </div>
-
-
-
-
-         </div>
-
+            </div>
         </div>
-
-
-
+        </div>
     </div>
-</section>
 
 <?php include ROOT . '/views/layouts/footer_admin.php'; ?>
 

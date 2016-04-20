@@ -1,28 +1,30 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
-<section>
     <div id="content">
+
         <div id="cabinet">
 
             <br/>
 
-            <h3>Добрый день, администратор!</h3>
+            <h3>Кабинет администратора</h3>
 
             <br/>
 
-            <p>Вам доступны такие возможности:</p>
+            <p class="user-name">Вам доступны такие возможности:</p>
 
             <br/>
 
-            <ul>
-                <li><a href="/php/site/admin/product" class="text-cabinet">Управление товарами</a></li>
-                <li><a href="/php/site/admin/category" class="text-cabinet">Управление категориями</a></li>
-                <li><a href="/php/site/admin/order" class="text-cabinet">Управление заказами</a></li>
+            <ul class="user-link">
+                <li><a href="/admin/product" class="text-cabinet">Управление товарами</a></li>
+                <li><a href="/admin/category" class="text-cabinet">Управление категориями</a></li>
+                <li><a href="/admin/order" class="text-cabinet">Управление заказами</a></li>
             </ul>
         </div>
 
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
     </div>
-</section>
+
 
 <?php include ROOT . '/views/layouts/footer_admin.php'; ?>
 

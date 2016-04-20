@@ -1,35 +1,35 @@
 <?php include ROOT . '/views/layouts/header_admin.php'; ?>
 
-<section>
-    <div class="container">
-        <div class="row">
+    <div id="content">
+        <div class="content-admin">
 
             <br/>
 
             <div class="breadcrumbs">
                 <ol class="breadcrumb">
-                    <li><a href="/php/site/admin">Админпанель</a></li>
-                    <li><a href="/php/site/admin/product">Управление товарами</a></li>
+                    <li><a href="/admin" class="text-cabinet">Админпанель</a></li>
+                    <li><a href="/admin/product" class="text-cabinet">Управление товарами</a></li>
                     <li class="active">Редактировать товар</li>
                 </ol>
             </div>
 
-
-            <h4>Редактировать товар #<?php echo $id; ?></h4>
+            <center><h4>Редактировать товар #<?php echo $id; ?></h4></center>
 
             <br/>
 
-            <div class="col-lg-4">
+        <div class="row">
+
+            <div class="col-sm-4 col-sm-offset-4 padding-right">
                 <div class="login-form">
                     <form action="#" method="post" enctype="multipart/form-data">
 
                         <p>Название товара</p>
                         <input type="text" name="name" placeholder="" value="<?php echo $product['name']; ?>">
 
-                        <p>Артикул</p>
+                        <p>Код товара</p>
                         <input type="text" name="code" placeholder="" value="<?php echo $product['code']; ?>">
 
-                        <p>Стоимость, $</p>
+                        <p>Стоимость, грн</p>
                         <input type="text" name="price" placeholder="" value="<?php echo $product['price']; ?>">
 
                         <p>Категория</p>
@@ -54,7 +54,7 @@
                         <input type="file" name="image" placeholder="" value="<?php echo $product['image']; ?>">
 
                         <p>Детальное описание</p>
-                        <textarea name="description"><?php echo $product['description']; ?></textarea>
+                        <textarea name="description" rows="7" cols="32"><?php echo $product['description']; ?></textarea>
 
                         <br/><br/>
 
@@ -74,14 +74,6 @@
 
                         <br/><br/>
 
-                        <p>Рекомендуемые</p>
-                        <select name="is_recommended">
-                            <option value="1" <?php if ($product['is_recommended'] == 1) echo ' selected="selected"'; ?>>Да</option>
-                            <option value="0" <?php if ($product['is_recommended'] == 0) echo ' selected="selected"'; ?>>Нет</option>
-                        </select>
-
-                        <br/><br/>
-
                         <p>Статус</p>
                         <select name="status">
                             <option value="1" <?php if ($product['status'] == 1) echo ' selected="selected"'; ?>>Отображается</option>
@@ -95,12 +87,12 @@
                         <br/><br/>
 
                     </form>
+
                 </div>
             </div>
-
+        </div>
         </div>
     </div>
-</section>
 
 <?php include ROOT . '/views/layouts/footer_admin.php'; ?>
 

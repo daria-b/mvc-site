@@ -8,41 +8,29 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="/php/site/template/images/i/11.jpg" alt="New York" width="940" height="700">
-                <!--<div class="carousel-caption">
-                    <h3>New York</h3>
-                    <p>The atmosphere in New York is lorem ipsum.</p>
-                </div>-->
+                <img src="/template/images/i/new/14.jpg" alt="img1" width="940" height="700">
+                <div class="carousel-caption green-title">
+                    <h3>Широкий выбор техники!</h3>
+                </div>
             </div>
 
             <div class="item">
-                <img src="/php/site/template/images/i/12.jpg" alt="Chicago" width="940" height="700">
-                <!--<div class="carousel-caption">
-                    <h3>Chicago</h3>
-                    <p>Thank you, Chicago - A night we won't forget.</p>
-                </div>-->
+                <img src="/template/images/i/new/11.jpg" alt="img2" width="940" height="700">
+                <div class="carousel-caption green-title">
+                    <h3>Доступные цены!</h3>
+                </div>
             </div>
 
             <div class="item">
-                <img src="/php/site/template/images/i/13.jpg" alt="Los Angeles" width="940" height="700">
-                <!--<div class="carousel-caption">
-                    <h3>LA</h3>
-                    <p>Even though the traffic was a mess, we had the best time playing at Venice Beach!</p>
-                </div>-->
-            </div>
-
-            <div class="item">
-                <img src="/php/site/template/images/i/14.jpg" alt="Chicago" width="940" height="700">
-                <!--<div class="carousel-caption">
-                    <h3>Chicago</h3>
-                    <p>Thank you, Chicago - A night we won't forget.</p>
-                </div>-->
+                <img src="/template/images/i/new/12.jpg" alt="img3" width="940" height="700">
+                <div class="carousel-caption green-title">
+                    <h3>Высокий уровень обслуживания!</h3>
+                </div>
             </div>
 
         </div>
@@ -72,21 +60,28 @@
 
     <div class="product">
 
-        <a href="/php/site/product/<?php echo $product['id']; ?>" class="product-title">
+        <a href="/product/<?php echo $product['id']; ?>" class="product-title">
             <?php echo $product['name']; ?>
         </a>
 
         <div class="fornew">
-        <a href="/php/site/product/<?php echo $product['id']; ?>"><img src="<?php echo Product::getImage($product['id']); ?>" alt=""></a>
+        <a href="/product/<?php echo $product['id']; ?>"><img src="<?php echo Product::getImage($product['id']); ?>" alt=""></a>
             <?php if ($product['is_new']): ?>
-                <img src="/php/site/template/images/home/new.png" class="new" alt="" />
+                <img src="/template/images/home/new.png" class="new" alt="" />
             <?php endif; ?>
         </div>
 
-        <div class="price">Цена: <?php echo $product['price']; ?>$</div>
-        <a href="#" data-id="<?php echo $product['id']; ?>"
+        <div class="price">Цена: <?php echo $product['price']; ?> грн</div>
+
+        <a href="#dialog" name="modal" data-id="<?php echo $product['id']; ?>"
            class="to-cart">В корзину</a>
 
+        <div id="dialog" class="window">
+            <a href="#"class="close"/>X</a>
+            <p class="mod-win">Товар добавлен в корзину!</p>
+        </div>
+
+        <div id="mask"></div>
 
     </div>
 
@@ -95,10 +90,7 @@
     </div>
 
     <div id="navigation">
-        <a href="#"><span>1</span></a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">&raquo;</a>
+        <?php echo $pagination->get();?>
     </div>
 
 </div>

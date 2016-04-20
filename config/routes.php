@@ -1,11 +1,44 @@
 <?php
 
 return array(
+
+    // Поиск
+    'search' => 'site/search',
+    // Комментарии
+    'message/page-([0-9]+)' => 'site/message/$1',
+    'message' => 'site/message',
+
     // Товар:
     'product/([0-9]+)' => 'product/view/$1', //actionView in ProductController
     // Каталог:
+    'catalog/pricedown/page-([0-9]+)' => 'catalog/pricedown/$1', //actionPricedown in CatalogController
+    'catalog/pricedown' => 'catalog/pricedown', //actionPricedown in CatalogController
+
+    'catalog/priceup/page-([0-9]+)' => 'catalog/priceup/$1', //actionPricedown in CatalogController
+    'catalog/priceup' => 'catalog/priceup', //actionPricedown in CatalogController
+
+    'catalog/namedown/page-([0-9]+)' => 'catalog/namedown/$1', //actionPricedown in CatalogController
+    'catalog/namedown' => 'catalog/namedown', //actionPricedown in CatalogController
+
+    'catalog/nameup/page-([0-9]+)' => 'catalog/nameup/$1', //actionPricedown in CatalogController
+    'catalog/nameup' => 'catalog/nameup', //actionPricedown in CatalogController
+
+    'catalog/page-([0-9]+)' => 'catalog/index/$1',
     'catalog' => 'catalog/index', //actionIndex in CatalogController
     // Категория товаров:
+    'category/([0-9]+)/pricedown/page-([0-9]+)' => 'catalog/categorypricedown/$1/$2', //actionCategory in CatalogController
+    'category/([0-9]+)/pricedown' => 'catalog/categorypricedown/$1', //actionCategory in CatalogController
+
+    'category/([0-9]+)/priceup/page-([0-9]+)' => 'catalog/categorypriceup/$1/$2', //actionCategory in CatalogController
+    'category/([0-9]+)/priceup' => 'catalog/categorypriceup/$1', //actionCategory in CatalogController
+
+    'category/([0-9]+)/namedown/page-([0-9]+)' => 'catalog/categorynamedown/$1/$2', //actionCategory in CatalogController
+    'category/([0-9]+)/namedown' => 'catalog/categorynamedown/$1', //actionCategory in CatalogController
+
+    'category/([0-9]+)/nameup/page-([0-9]+)' => 'catalog/categorynameup/$1/$2', //actionCategory in CatalogController
+    'category/([0-9]+)/nameup' => 'catalog/categorynameup/$1', //actionCategory in CatalogController
+
+
     'category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2', //actionCategory in CatalogController
     'category/([0-9]+)' => 'catalog/category/$1', //actionCategory in CatalogController
     // Корзина:
@@ -20,7 +53,6 @@ return array(
     'user/logout' => 'user/logout',
     'cabinet/edit' => 'cabinet/edit',
     'cabinet' => 'cabinet/index',
-
     // Управление товарами:
     'admin/product/create' => 'adminProduct/create',
     'admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
@@ -38,12 +70,14 @@ return array(
     'admin/order' => 'adminOrder/index',
     // Админпанель:
     'admin' => 'admin/index',
-
     // О магазине
     'contacts' => 'site/contact',
     'about' => 'site/about',
     'shares' => 'site/shares',
+    'delivery' => 'site/delivery',
     // Главная страница
-    'index' => 'site/index', //actionIndex in SiteController
+    'page-([0-9]+)' => 'site/index/$1', //actionNew in SiteController
+    '' => 'site/index', //actionIndex in SiteController
+
 
 );
